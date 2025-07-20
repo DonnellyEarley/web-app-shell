@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page 1 - Web App Shell</title>
+  <link rel="icon" href="../assets/egg.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../styles/styles.css" />
+  <link rel="stylesheet" href="../modules/uikit/css/uikit.min.css" />
+  <script src="../modules/uikit/js/uikit.min.js"></script>
+  <script src="../modules/uikit/js/uikit-icons.min.js"></script>
+</head>
+<body>
+  <div class="dashboard-container uk-flex uk-height-viewport">
+  
+    <nav id="side-menu" class="side-menu uk-flex uk-flex-column uk-flex-between uk-background-muted uk-box-shadow-small">
+      <div>
+        <div class="logo-container uk-text-center">
+          <span uk-icon="icon: bolt; ratio: 2" class="logo-icon"></span>
+        </div>
+        <ul class="uk-nav-default uk-nav-parent-icon uk-margin-small-top" uk-nav>
+          <li><a href="dashboard.html"><span uk-icon="icon: home" class="uk-margin-small-right"></span> Home</a></li>
+          <li><a href="page1.html"><span uk-icon="icon: file-text" class="uk-margin-small-right"></span> Page 1</a></li>
+          <li><a href="page2.html"><span uk-icon="icon: file-text" class="uk-margin-small-right"></span> Page 2</a></li>
+        </ul>
+      </div>
+      <div class="bottom-buttons uk-flex uk-flex-between uk-padding-small">
+        <button id="logout-button" class="uk-button uk-button-default" uk-tooltip="title: Logout; pos: right"
+          aria-label="Logout">
+          <span uk-icon="icon: sign-out"></span>
+        </button>
+        <button id="settings-button" class="uk-button uk-button-default" uk-tooltip="title: Settings; pos: right"
+          aria-label="Settings">
+          <span uk-icon="icon: cog"></span>
+        </button>
+      </div>
+    </nav>
+  
+    <main class="main-content uk-flex-auto uk-padding">
+      <h1>Page 1</h1>
+      <p>Work In Progress...</p>
+    </main>
+  
+  </div>
+
+  <!-- settings -->
+  <div id="settings-modal" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+      <h2 class="uk-modal-title">Settings</h2>
+      <p>Work In Progress...</p>
+      <button class="uk-modal-close" type="button">Close</button>
+    </div>
+  </div>
+
+  <script type="module" src="../modules/app.js"></script>
+</body>
+</html>
