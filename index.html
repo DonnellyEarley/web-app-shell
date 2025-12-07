@@ -6,59 +6,30 @@
   <title>Login - Web App Shell</title>
   <link rel="icon" href="assets/egg.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="./styles/styles.css" />
-  <link rel="stylesheet" href="./modules/uikit/css/uikit.min.css" />
-  <script src="./modules/uikit/js/uikit.min.js"></script>
-  <script src="./modules/uikit/js/uikit-icons.min.js"></script>
 </head>
 <body>
 
-  <!-- login form -->
-  <div class="uk-section uk-flex uk-flex-middle uk-animation-fade" uk-height-viewport>
-    <div class="uk-width-1-3@m uk-width-1-2@s uk-width-1-1 uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large login-container">
-      <h2 id="login-header" class="uk-card-title uk-text-center">Login</h2>
-      <form id="login-form" class="uk-form-stacked">
-        <div id="login-alert" class="uk-alert-danger" uk-alert style="display:none; margin-bottom: 15px;">
-          <a class="uk-alert-close"></a>
-          <p id="login-alert-message"></p>
-        </div>
-        <div class="uk-margin">
-          <label class="uk-form-label" for="username">Email</label>
-          <div class="uk-form-controls">
-            <input class="uk-input" id="username" type="text" placeholder="Enter your username or email" required>
-          </div>
-        </div>
-        <div class="uk-margin">
-          <label class="uk-form-label" for="password">Password</label>
-          <div class="uk-form-controls uk-position-relative">
-            <input class="uk-input" id="password" type="password" placeholder="Enter your password" required>
-            <button type="button" id="toggle-password-visibility" class="uk-button uk-button-default uk-position-small uk-position-center-right" tabindex="-1" aria-label="Toggle password visibility" style="border:none; background: transparent; padding: 0; margin: 0;">
-              <span uk-icon="icon: eye"></span>
-            </button>
-          </div>
-        </div>
-        <div class="uk-margin uk-text-right">
-          <a href="#" id="forgot-password-link">Forgot password?</a>
-        </div>
-        <button class="uk-button uk-button-primary uk-width-1-1" type="submit">Login</button>
-      </form>
+  <header>
+    <a class="logo" href="./">
+      <img src="assets/egg.svg" alt="logo" width="28" height="28" style="display:block">
+      <span>Web App Shell</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="pages/page1.html">Page 1</a></li>
+        <li><a href="pages/page2.html">Page 2</a></li>
+        <li><a href="pages/dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+  </header>
 
-      <!-- forgot password form -->
-      <form id="forgot-password-form" class="uk-form-stacked" style="display:none; margin-top: 20px;">
-        <h3 class="uk-card-title uk-text-center">Forgot Password</h3>
-        <div class="uk-margin">
-          <label class="uk-form-label" for="reset-email">Email</label>
-          <div class="uk-form-controls">
-            <input class="uk-input" id="reset-email" type="email" placeholder="Enter your email" required>
-          </div>
-        </div>
-        <div class="uk-margin uk-text-right">
-          <a href="#" id="back-to-login-link">Back to login</a>
-        </div>
-        <button class="uk-button uk-button-secondary uk-width-1-1" type="submit">Reset Password</button>
-      </form>
+  <main class="hero">
+    <div>
+      <h1>Welcome to your Web App Shell</h1>
+      <p>Use this lightweight shell as a starting point — navigate to pages or open the dashboard to get started.</p>
+      <a class="cta" href="pages/dashboard.html">Open Dashboard</a>
     </div>
-  </div>
+  </main>
 
-  <script type="module" src="modules/login/login.js"></script>
 </body>
 </html>
