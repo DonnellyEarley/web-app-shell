@@ -6,66 +6,79 @@
   <title>Dashboard - Web App Shell</title>
   <link rel="icon" href="../assets/egg.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="../styles/styles.css" />
-  <link rel="stylesheet" href="../modules/uikit/css/uikit.min.css" />
-  <script src="../modules/uikit/js/uikit.min.js"></script>
-  <script src="../modules/uikit/js/uikit-icons.min.js"></script>
+  <link rel="stylesheet" href="../styles/dashboard.css" />
 </head>
 <body>
-  <div class="dashboard-container uk-flex uk-height-viewport">
 
-    <nav id="side-menu" class="side-menu uk-flex uk-flex-column uk-flex-between uk-background-muted uk-box-shadow-small">
-      <div>
-        <div class="logo-container uk-text-center">
-          <span uk-icon="icon: bolt; ratio: 2" class="logo-icon"></span>
-        </div>
-        <ul class="uk-nav-default uk-nav-parent-icon uk-margin-small-top" uk-nav>
-          <li><a href="dashboard.html"><span uk-icon="icon: home" class="uk-margin-small-right"></span> Home</a></li>
-          <li><a href="page1.html"><span uk-icon="icon: file-text" class="uk-margin-small-right"></span> Page 1</a></li>
-          <li><a href="page2.html"><span uk-icon="icon: file-text" class="uk-margin-small-right"></span> Page 2</a></li>
-        </ul>
-      </div>
-      <div class="bottom-buttons uk-flex uk-flex-between uk-padding-small">
-        <button id="logout-button" class="uk-button uk-button-default" uk-tooltip="title: Logout; pos: right" aria-label="Logout">
-          <span uk-icon="icon: sign-out"></span>
-        </button>
-        <button id="settings-button" class="uk-button uk-button-default" uk-tooltip="title: Settings; pos: right" aria-label="Settings">
-          <span uk-icon="icon: cog"></span>
-        </button>
-      </div>
+  <header>
+    <a class="logo" href="../index.html">
+      <img src="../assets/egg.svg" alt="logo" width="28" height="28" style="display:block">
+      <span>Web App Shell</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="../pages/page1.html">Page 1</a></li>
+        <li><a href="../pages/page2.html">Page 2</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <main class="main-content uk-flex-auto uk-padding">
-      <h1>Home</h1>
-
-      <!-- kpi cards -->
-      <div id="kpi-cards" class="uk-grid-small uk-child-width-1-4 uk-text-center" uk-grid></div>
-
-      <!-- charts -->
-      <div id="charts-container" class="uk-margin-top uk-grid-small uk-child-width-expand" uk-grid>
-        <div class="uk-card uk-card-default uk-card-body">
-          <canvas id="line-chart" height="200"></canvas>
-        </div>
-        <div class="uk-card uk-card-default uk-card-body">
-          <canvas id="bar-chart" height="200"></canvas>
-        </div>
-      </div>
-    </main>
-
-  </div>
-
-  <!-- settings -->
-  <div id="settings-modal" uk-modal>
-    <div class="uk-modal-dialog uk-modal-body">
-      <h2 class="uk-modal-title">Settings</h2>
-      <p>Work In Progress...</p>
-      <button class="uk-modal-close" type="button">Close</button>
+  <main class="dashboard-container">
+    <div class="dashboard-header">
+      <h1>Dashboard</h1>
+      <p>KPIs & Analytics</p>
     </div>
-  </div>
 
-  <script type="module" src="../modules/app.js"></script>
-  <script type="module" src="../modules/dashboard/dashboard.js"></script>
+    <!-- KPI Cards Section -->
+    <section class="kpi-section">
+      <div class="kpi-card">
+        <div class="kpi-label">Total Revenue</div>
+        <div class="kpi-value">$45,231</div>
+        <div class="kpi-change positive">↑ 12.5% from last month</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Active Users</div>
+        <div class="kpi-value">2,847</div>
+        <div class="kpi-change positive">↑ 8.2% from last month</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Total Orders</div>
+        <div class="kpi-value">1,293</div>
+        <div class="kpi-change positive">↑ 15.3% from last month</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Conversion Rate</div>
+        <div class="kpi-value">3.24%</div>
+        <div class="kpi-change negative">↓ 0.8% from last month</div>
+      </div>
+    </section>
+
+    <!-- Charts Section -->
+    <section class="charts-section">
+      <div class="chart-container">
+        <h2>Revenue Trend</h2>
+        <canvas id="revenueChart"></canvas>
+      </div>
+      <div class="chart-container">
+        <h2>Sales by Category</h2>
+        <canvas id="categoryChart"></canvas>
+      </div>
+    </section>
+
+    <section class="charts-section">
+      <div class="chart-container">
+        <h2>User Growth</h2>
+        <canvas id="userGrowthChart"></canvas>
+      </div>
+      <div class="chart-container">
+        <h2>Conversion Funnel</h2>
+        <canvas id="conversionChart"></canvas>
+      </div>
+    </section>
+  </main>
+
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-  
+  <script type="module" src="../modules/dashboard.js"></script>
 </body>
 </html>
