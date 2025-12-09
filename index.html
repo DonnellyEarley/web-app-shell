@@ -6,6 +6,8 @@
   <title>Login - Web App Shell</title>
   <link rel="icon" href="assets/egg.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="./styles/styles.css" />
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="./modules/global.js"></script>
 </head>
 <body>
 
@@ -14,13 +16,7 @@
       <img src="assets/egg.svg" alt="logo" width="28" height="28" style="display:block">
       <span>Web App Shell</span>
     </a>
-    <nav aria-label="Main navigation">
-      <ul>
-        <li><a href="pages/page1.html">Page 1</a></li>
-        <li><a href="pages/page2.html">Page 2</a></li>
-        <li><a href="pages/dashboard.html">Dashboard</a></li>
-      </ul>
-    </nav>
+    <span>Author: Donnelly Earley</span>
   </header>
 
   <main class="hero">
@@ -29,19 +25,14 @@
       <p>I use this lightweight shell as a starting point — navigate to the different sub-projects at your own leisure.</p>
       <div class="nav-tiles">
         <a href="pages/dashboard.html" class="nav-tile">
-          <div class="tile-icon">📊</div>
+          <img src="./assets/dashboard.png" style="width: 50px;"/>
           <h3>Dashboard</h3>
           <p>KPIs & Analytics</p>
         </a>
-        <a href="pages/page1.html" class="nav-tile">
-          <div class="tile-icon">📄</div>
-          <h3>Page 1</h3>
-          <p>First sub-project</p>
-        </a>
-        <a href="pages/page2.html" class="nav-tile">
-          <div class="tile-icon">📄</div>
-          <h3>Page 2</h3>
-          <p>Second sub-project</p>
+        <a href="pages/todo.html" class="nav-tile">
+          <img src="./assets/todolist.png" style="width: 50px;"/>
+          <h3>To-Do List</h3>
+          <p>Track various tasks</p>
         </a>
       </div>
     </div>
