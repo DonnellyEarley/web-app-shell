@@ -1,13 +1,16 @@
 :root {
-  --primary-color: #4a90e2;
   --accent: #0066ff;
+  --primary-color: #4a90e2;
+  --primary-hover: #357abd;
   --secondary-color: #f5f7fa;
+  --secondary-hover: #e1e4e8;
   --bg: var(--secondary-color);
   --text-color: #333;
   --error-color: #e74c3c;
   --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --max-width: 480px;
   --header-height: 64px;
+  --border-color: #ccc;
 }
 
 * {
