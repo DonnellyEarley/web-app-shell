@@ -17,7 +17,28 @@
       <img src="../assets/egg.svg" alt="logo" width="28" height="28" style="display:block">
       <span>Web App Shell</span>
     </a>
-    <span style="margin-left: auto; display: flex; align-items: center; gap: 0.5rem;"><a href="https://github.com/DonnellyEarley" target="_blank" rel="noopener noreferrer" title="GitHub Profile" style="color: inherit; text-decoration: none; display: flex; align-items: center;"><i data-feather="github" style="width: 20px; height: 20px;"></i></a>Donnelly Earley</span>
+    <span style="margin-left: auto; display: flex; align-items: center; gap: 1rem;">
+      <a href="https://github.com/DonnellyEarley" target="_blank" rel="noopener noreferrer" title="GitHub Profile" style="color: inherit; text-decoration: none; display: flex; align-items: center;"><i data-feather="github" style="width: 20px; height: 20px;"></i></a>
+      <span style="color: inherit;">Donnelly Earley</span>
+      <div class="settings-container">
+        <button class="settings-btn" id="settingsBtn" title="Settings">
+          <i data-feather="settings" style="width: 20px; height: 20px;"></i>
+        </button>
+        <div class="settings-popup" id="settingsPopup">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <span style="font-weight: 600; font-size: 0.95rem;">Settings</span>
+            <button id="closePopupBtn" style="background: none; border: none; cursor: pointer; padding: 0; display: flex; align-items: center; color: inherit;">
+              <i data-feather="x" style="width: 18px; height: 18px;"></i>
+            </button>
+          </div>
+          <label class="toggle-option">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="toggle-slider"></span>
+            <span>Dark Mode</span>
+          </label>
+        </div>
+      </div>
+    </span>
   </header>
 
   <main class="weather-container">

@@ -13,6 +13,38 @@
   --border-color: #ccc;
 }
 
+body.dark-mode {
+  --bg: #1a1a1a;
+  --text-color: #e0e0e0;
+  --secondary-color: #2d2d2d;
+  --secondary-hover: #3d3d3d;
+  --border-color: #444;
+}
+
+body.dark-mode header {
+  background: #222;
+  border-bottom-color: #444;
+}
+
+body.dark-mode .nav-tile {
+  background: #2d2d2d;
+  color: #e0e0e0;
+}
+
+body.dark-mode .nav-tile:hover {
+  background: #3d3d3d;
+  border-color: var(--primary-color);
+}
+
+body.dark-mode .nav-tile p {
+  color: #999;
+}
+
+body.dark-mode .settings-popup {
+  background: #2d2d2d;
+  border-color: #444;
+}
+
 * {
   box-sizing:border-box
 }
@@ -105,6 +137,93 @@ nav a:hover{background:rgba(0,0,0,0.04)}
   margin:0;
   font-size:0.875rem;
   color:#666
+}
+
+.settings-container {
+  position: relative;
+}
+
+.settings-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.settings-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .settings-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.settings-popup {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+  min-width: 180px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: none;
+  z-index: 100;
+}
+
+.settings-popup.active {
+  display: block;
+}
+
+.toggle-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.95rem;
+}
+
+.toggle-option input[type="checkbox"] {
+  display: none;
+}
+
+.toggle-slider {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+  background-color: #ccc;
+  border-radius: 12px;
+  transition: background-color 0.3s;
+  flex-shrink: 0;
+}
+
+.toggle-option input[type="checkbox"]:checked + .toggle-slider {
+  background-color: var(--accent);
+}
+
+.toggle-slider::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  top: 2px;
+  left: 2px;
+  transition: left 0.3s;
+}
+
+.toggle-option input[type="checkbox"]:checked + .toggle-slider::after {
+  left: 18px;
 }
 
 @media (max-width:520px){nav ul{gap:.5rem}header{padding:0 .75rem}.nav-tiles{grid-template-columns:1fr}}

@@ -21,4 +21,30 @@
 .task-actions button{background:transparent;border:none;padding:.35rem .5rem;border-radius:6px;cursor:pointer}
 .task-edit-input{padding:.5rem .75rem;border-radius:6px;border:1px solid #e6e9ef}
 
+/* Dark Mode */
+body.dark-mode .task-item {
+  background: #2d2d2d;
+  color: #e0e0e0;
+}
+
+body.dark-mode .task-form input {
+  background: #2d2d2d;
+  color: #e0e0e0;
+  border-color: #444;
+}
+
+body.dark-mode .task-filters select {
+  background: #2d2d2d;
+  color: #e0e0e0;
+  border-color: #444;
+}
+
+body.dark-mode .task-stats {
+  color: #999;
+}
+
+body.dark-mode .todo-header p {
+  color: #999;
+}
+
 @media (max-width:520px){.task-filters{flex-direction:column;align-items:flex-start;gap:.5rem}}

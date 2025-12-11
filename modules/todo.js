@@ -18,6 +18,8 @@ function saveTasks(tasks) {
 }
 
 function createTaskNode(task) {
+  const isDarkMode = localStorage.getItem('darkMode') === 'true';
+
   const wrap = document.createElement('article');
   wrap.className = 'task-item' + (task.completed ? ' completed' : '');
   wrap.dataset.id = task.id;
@@ -40,12 +42,12 @@ function createTaskNode(task) {
 
   const editBtn = document.createElement('button');
   editBtn.title = 'Edit Task';
-  editBtn.innerHTML = '<i data-feather="edit-3" style="color:black"></i>';
+  editBtn.innerHTML = `<i data-feather="edit-3" style="color:${isDarkMode ? 'white' : 'black'}"></i>`;
   editBtn.addEventListener('click', () => startEdit(task.id));
 
   const delBtn = document.createElement('button');
   delBtn.title = 'Delete Task';
-  delBtn.innerHTML = '<i data-feather="trash-2" style="color:red"></i>';
+  delBtn.innerHTML = `<i data-feather="trash-2" style="color:red"></i>`;
   delBtn.addEventListener('click', () => removeTask(task.id));
 
   actions.appendChild(editBtn);
