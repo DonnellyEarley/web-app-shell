@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stock Tracker - Web App Shell</title>
+  <link rel="icon" href="../assets/egg.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../styles/styles.css" />
+  <link rel="stylesheet" href="../styles/stocks.css" />
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../modules/global.js"></script>
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="../index.html">
+      <img src="../assets/egg.svg" alt="logo" width="28" height="28" style="display:block">
+      <span>Web App Shell</span>
+    </a>
+    <span style="margin-left: auto; display: flex; align-items: center; gap: 1rem;">
+      <a href="https://github.com/DonnellyEarley" target="_blank" rel="noopener noreferrer" title="GitHub Profile" style="color: inherit; text-decoration: none; display: flex; align-items: center;"><i data-feather="github" style="width: 20px; height: 20px;"></i></a>
+      <span style="color: inherit;">Donnelly Earley</span>
+      <div class="settings-container">
+        <button class="settings-btn" id="settingsBtn" title="Settings">
+          <i data-feather="settings" style="width: 20px; height: 20px;"></i>
+        </button>
+        <div class="settings-popup" id="settingsPopup">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <span style="font-weight: 600; font-size: 0.95rem;">Settings</span>
+            <button id="closePopupBtn" style="background: none; border: none; cursor: pointer; padding: 0; display: flex; align-items: center; color: inherit;">
+              <i data-feather="x" style="width: 18px; height: 18px;"></i>
+            </button>
+          </div>
+          <label class="toggle-option">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="toggle-slider"></span>
+            <span>Dark Mode</span>
+          </label>
+        </div>
+      </div>
+    </span>
+  </header>
+
+  <main class="stocks-container">
+    <div class="stocks-header">
+      <img src="../assets/stock-market.png" style="width: 50px;"/>
+      <h1>Stock Tracker</h1>
+      <p>Real-time stock prices and data</p>
+    </div>
+
+    <section class="stocks-search">
+      <input
+        type="text"
+        id="symbolInput"
+        placeholder="Enter stock symbol (e.g., AAPL, GOOGL, MSFT)"
+        class="search-box"
+      />
+      <button id="searchBtn" class="search-btn">Search</button>
+    </section>
+
+    <section class="stocks-content">
+      <div id="loading" class="loading" style="display: none;">
+        <div class="spinner"></div>
+        <p>Loading stock data...</p>
+      </div>
+
+      <div id="error" class="error" style="display: none;"></div>
+
+      <div id="stockDisplay" class="stock-display" style="display: none;">
+        <div class="stock-header-info">
+          <div class="stock-title">
+            <h2 id="stockSymbol"></h2>
+            <p id="stockName"></p>
+          </div>
+          <div class="stock-price-display">
+            <span id="stockPrice" class="price-value">--</span>
+            <span id="priceChange" class="price-change">--</span>
+          </div>
+        </div>
+
+        <div class="stocks-table-container">
+          <h3>Stock Information</h3>
+          <table class="stocks-table">
+            <tbody>
+              <tr>
+                <td class="label">Latest Price</td>
+                <td id="tablePrice">--</td>
+              </tr>
+              <tr>
+                <td class="label">Open Price</td>
+                <td id="tableOpen">--</td>
+              </tr>
+              <tr>
+                <td class="label">High (Today)</td>
+                <td id="tableHigh">--</td>
+              </tr>
+              <tr>
+                <td class="label">Low (Today)</td>
+                <td id="tableLow">--</td>
+              </tr>
+              <tr>
+                <td class="label">Previous Close</td>
+                <td id="tablePrevious">--</td>
+              </tr>
+              <tr>
+                <td class="label">Volume</td>
+                <td id="tableVolume">--</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="suggestions" class="suggestions" style="display: none;">
+        <h3>Popular Stocks</h3>
+        <div class="suggestion-buttons">
+          <button class="suggestion-btn" data-symbol="AAPL">Apple (AAPL)</button>
+          <button class="suggestion-btn" data-symbol="GOOGL">Google (GOOGL)</button>
+          <button class="suggestion-btn" data-symbol="MSFT">Microsoft (MSFT)</button>
+          <button class="suggestion-btn" data-symbol="AMZN">Amazon (AMZN)</button>
+          <button class="suggestion-btn" data-symbol="TSLA">Tesla (TSLA)</button>
+          <button class="suggestion-btn" data-symbol="META">Meta (META)</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../modules/stocks.js"></script>
+</body>
+</html>
