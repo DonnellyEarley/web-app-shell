@@ -45,17 +45,21 @@
   <main class="stocks-container">
     <div class="stocks-header">
       <img src="../assets/stock-market.png" style="width: 50px;"/>
-      <h1>Stock Tracker</h1>
+      <h1>Stock Search</h1>
       <p>Real-time stock prices and data</p>
     </div>
 
     <section class="stocks-search">
-      <input
-        type="text"
-        id="symbolInput"
-        placeholder="Enter stock symbol (e.g., AAPL, GOOGL, MSFT)"
-        class="search-box"
-      />
+      <div class="search-container">
+        <input
+          type="text"
+          id="symbolInput"
+          placeholder="Enter stock symbol (e.g., AAPL, GOOGL, MSFT)"
+          class="search-box"
+          autocomplete="off"
+        />
+        <div id="autocompleteDropdown" class="autocomplete-dropdown" style="display: none;"></div>
+      </div>
       <button id="searchBtn" class="search-btn">Search</button>
     </section>
 
